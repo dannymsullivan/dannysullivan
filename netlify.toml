@@ -2,6 +2,8 @@
   command = "npm run build"
   publish = "dist"
 
+# The public "Powered by Netlify" badge is disabled in the project's General settings.
+
 [build.environment]
   NODE_VERSION = "22"
 
