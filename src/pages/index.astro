@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const work = [
+  {
+    name: 'Seatview',
+    description:
+      'An end-to-end system that generates, classifies, and publishes AI-transformed seat-view photos at scale, so fans can trust the view before they buy.',
+    stack: 'Python, cloud GPUs, S3, CloudFront, GenAI',
+  },
+  {
+    name: 'Creative Hub',
+    description:
+      'A self-serve internal product that lets content teams source, generate, and publish section-photo coverage without an engineer in the loop.',
+    stack: 'Next.js, TypeScript, AI workflows',
+  },
+  {
+    name: 'Venue intelligence',
+    description:
+      'Agents that find photo-coverage gaps and reference candidates, plus an SVG-to-GeoJSON pipeline for interactive venue maps.',
+    stack: 'Agents, Snowflake, Mapbox GL, WebGL',
+  },
+];
+
+const experience = [
+  ['2026—Now', 'Gametime', 'Product Engineer'],
+  ['2022—2026', 'Pluralsight', 'Sr. Creative Technologist · Staff Author, GenAI · Curriculum Manager'],
+  ['2017—2019', '2U', 'Sr. Curriculum Engineer'],
+  ['2012—2017', 'UltraLinq + Creative Loafing', 'Software Engineer'],
+];
+---
+
+<BaseLayout
+  title="Danny Sullivan — Product Engineer"
+  description="Product engineer at Gametime building end-to-end AI products and applied GenAI systems."
+>
+  <div class="page-shell">
+    <header class="simple-header" id="top">
+      <a class="simple-brand" href="/" aria-label="Danny Sullivan, home">
+        <span class="brand-mark">DS</span>
+        <span>Danny Sullivan</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="mailto:hello@dannysullivan.ai">Email</a>
+      </nav>
+    </header>
+
+    <main class="content-grid">
+      <aside class="profile">
+        <div class="profile-intro">
+          <img src="/danny-sullivan.jpg" alt="Danny Sullivan smiling" width="104" height="104" />
+          <p>I’m a Product Engineer at <strong>Gametime</strong>, building AI products for live events.</p>
+        </div>
+        <p>I turn fuzzy ideas into working software, from the interface through the models and infrastructure.</p>
+        <p>Before tech, I played professional baseball and taught special education.</p>
+        <div class="profile-links">
+          <span>Get in touch</span>
+          <a href="mailto:hello@dannysullivan.ai">hello@dannysullivan.ai</a>
+        </div>
+      </aside>
+
+      <div class="main-column">
+      <section class="simple-hero">
+        <h1>I build AI systems<br />that <em>ship.</em></h1>
+        <p class="lead">
+          I take ambiguous, early-stage problems and turn them into production software—fast.
+          Right now I’m building the generative-AI systems that help fans see and trust their
+          seat view before they buy.
+        </p>
+        <div class="hero-links">
+          <a class="primary-link" href="mailto:hello@dannysullivan.ai">Work with me <span>↗</span></a>
+        </div>
+      </section>
+
+      <section class="text-section" aria-labelledby="about-heading">
+        <h2 id="about-heading">What I do</h2>
+        <div class="prose">
+          <p>
+            I own products end to end: find the useful problem, shape the experience, build the
+            frontend and backend, wire up the models and infrastructure, ship it, and measure what
+            happens next.
+          </p>
+          <p>
+            I work agent-first. Claude Code, Codex, Cursor, and Gemini are part of my day-to-day
+            development loop—not demos off to the side. The point is more leverage, faster learning,
+            and better software in people’s hands.
+          </p>
+        </div>
+      </section>
+
+      <section class="text-section" id="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">A few things I’ve built</h2>
+        <div class="work-list">
+          {work.map((item, index) => (
+            <article class="work-item">
+              <span class="item-number">0{index + 1}</span>
+              <div>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p class="stack">{item.stack}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="text-section" aria-labelledby="stack-heading">
+        <h2 id="stack-heading">Tools I reach for</h2>
+        <div class="prose compact-prose">
+          <p><strong>Build:</strong> TypeScript, Node.js, React, Next.js, Python</p>
+          <p><strong>AI:</strong> Claude Code, Codex, Cursor, Gemini, v0, ComfyUI, fal.ai, Higgsfield</p>
+          <p><strong>Ship:</strong> AWS, Vercel, RunPod, Snowflake, Supabase, Statsig</p>
+        </div>
+      </section>
+
+      <section class="text-section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Before Gametime</h2>
+        <div class="prose">
+          <p>
+            At Pluralsight, I was a senior creative technologist, Staff Author for Generative AI,
+            and curriculum manager. I built internal AI products, created hands-on learning
+            experiences, and pitched new products to leadership, the C-suite, and the board.
+          </p>
+          <p>
+            Before that, I built curriculum at 2U and software for healthcare and media companies.
+            Before tech entirely, I played professional baseball and taught special education.
+          </p>
+        </div>
+        <div class="mini-timeline">
+          {experience.map((item) => (
+            <div><span>{item[0]}</span><strong>{item[1]}</strong><p>{item[2]}</p></div>
+          ))}
+        </div>
+      </section>
+
+      <section class="closing">
+        <h2>Have a hard problem<br />that needs to become <em>real?</em></h2>
+        <p>Tell me about it. I’ll tell you honestly where I can help.</p>
+        <a class="primary-link" href="mailto:hello@dannysullivan.ai">hello@dannysullivan.ai <span>↗</span></a>
+      </section>
+      </div>
+    </main>
+
+    <footer class="simple-footer">
+      <p>© {new Date().getFullYear()} Danny Sullivan</p>
+      <a href="#top" aria-label="Back to top">Top ↑</a>
+    </footer>
+  </div>
+</BaseLayout>
