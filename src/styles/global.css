@@ -115,6 +115,11 @@ img { display: block; max-width: 100%; }
 .mini-timeline strong { font-weight: 650; }
 .mini-timeline p { margin: 0; color: var(--muted); }
 
+.education-list { border-top: 1px solid var(--ink); }
+.education-list > div { display: grid; grid-template-columns: minmax(250px, 1fr) 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.education-list strong { font-size: 15px; font-weight: 650; }
+.education-list p { margin: 0; color: var(--muted); font-size: 13px; }
+
 .closing { padding: 100px 0 110px; border-top: 1px solid var(--line); }
 .closing h2 { max-width: 780px; margin: 0; font-size: clamp(44px, 7vw, 72px); font-weight: 650; letter-spacing: -.065em; line-height: 1; }
 .closing p { margin: 30px 0; color: var(--muted); font-size: 17px; }
@@ -141,6 +146,7 @@ img { display: block; max-width: 100%; }
   .mini-timeline { margin-top: 34px; }
   .mini-timeline > div { grid-template-columns: 85px 1fr; gap: 8px 16px; }
   .mini-timeline p { grid-column: 2; }
+  .education-list > div { grid-template-columns: 1fr; gap: 4px; }
   .closing { padding: 72px 0 80px; }
   .closing h2 { font-size: 48px; }
 }
