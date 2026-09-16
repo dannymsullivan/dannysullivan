@@ -1,0 +1,32 @@
+---
+import ClientLayout from '../../layouts/ClientLayout.astro';
+
+// Public, email-verified login link from this business's Stripe portal settings.
+// This is not a customer-specific session and contains no credentials.
+const portalUrl = 'https://billing.stripe.com/p/login/28E14n70RgIh0hs4qZ7Vm00';
+---
+
+<ClientLayout title="Clients" description="Manage your billing, payment methods, and invoices with Danny Sullivan.">
+  <section class="client-heading">
+    <p class="eyebrow">For my clients</p>
+    <h1>Good work.<br /><em>Simple billing.</em></h1>
+    <p class="client-intro">Your invoices, payment details, and subscription, all in one place. So we can keep our focus on what we’re building.</p>
+  </section>
+  <section class="billing-panel" aria-labelledby="billing-heading">
+    <div class="billing-access">
+      <h2 id="billing-heading">Your billing portal</h2>
+      <p>Sign in with the email address you use for billing. Stripe will email you a secure way to access your account.</p>
+      <a class="primary-link" href={portalUrl}>Manage billing <span aria-hidden="true">↗</span></a>
+      <p class="billing-note">Securely hosted by Stripe. No new account needed.</p>
+    </div>
+    <ul class="billing-features">
+      <li><h3>Invoices & payments</h3><p>View your billing history, download invoices, and pay outstanding invoices.</p></li>
+      <li><h3>Payment details</h3><p>Update your payment method and keep your billing information current.</p></li>
+      <li><h3>Your subscription</h3><p>Check your recurring plan and next billing date.</p></li>
+    </ul>
+  </section>
+  <aside class="client-help">
+    <div><h2>Need a hand?</h2><p>For a new project, a change in scope, or a billing question, get in touch.</p></div>
+    <a href="mailto:hello@dannysullivan.ai">Email Danny <span aria-hidden="true">↗</span></a>
+  </aside>
+</ClientLayout>

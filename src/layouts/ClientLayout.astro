@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/clients.css';
+
+interface Props { title: string; description: string; noindex?: boolean; }
+const { title, description, noindex = false } = Astro.props;
+---
+
+<BaseLayout title={`${title} — Danny Sullivan`} description={description} noindex={noindex}>
+  <div class="page-shell client-shell">
+    <header class="simple-header">
+      <a class="simple-brand" href="/" aria-label="Danny Sullivan, home">
+        <span class="brand-mark">DS</span><span>Danny Sullivan</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Work</a>
+        <a href="/clients/" aria-current={Astro.url.pathname === '/clients/' ? 'page' : undefined}>Clients</a>
+        <a href="mailto:hello@dannysullivan.ai">Email</a>
+      </nav>
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="simple-footer">
+      <p>© {new Date().getFullYear()} Danny Sullivan</p>
+      <a href="mailto:hello@dannysullivan.ai">Get in touch ↗</a>
+    </footer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import ClientLayout from '../../layouts/ClientLayout.astro';
+
+const tools = [
+  { title: 'Customers', description: 'Find a client, review their billing details, and see their payment history.', href: 'https://dashboard.stripe.com/customers' },
+  { title: 'Subscriptions', description: 'Review recurring plans, change a rate, or manage a renewal.', href: 'https://dashboard.stripe.com/subscriptions' },
+  { title: 'Invoices', description: 'Create an invoice, check payment status, or follow up on an outstanding balance.', href: 'https://dashboard.stripe.com/invoices' },
+  { title: 'Payment links', description: 'Create a checkout link for a new engagement or a one-time payment.', href: 'https://dashboard.stripe.com/payment-links' },
+];
+---
+
+<ClientLayout title="Client management" description="Client billing management for Danny Sullivan." noindex>
+  <section class="client-heading">
+    <p class="eyebrow">For the studio</p>
+    <h1>Client <em>management.</em></h1>
+    <p class="client-intro">Customers, recurring work, and payments. Open a tool below and sign in to your Stripe account to manage billing.</p>
+  </section>
+  <section class="management-grid" aria-label="Billing management tools">
+    {tools.map((tool) => (
+      <a class="management-card" href={tool.href}>
+        <h2>{tool.title}<span aria-hidden="true">↗</span></h2>
+        <p>{tool.description}</p>
+        <span class="tool-label">Open in Stripe</span>
+      </a>
+    ))}
+  </section>
+  <aside class="client-help">
+    <div><h2>Client portal settings</h2><p>Manage the billing options available to your clients.</p></div>
+    <a href="https://dashboard.stripe.com/settings/billing/portal">Configure portal <span aria-hidden="true">↗</span></a>
+  </aside>
+</ClientLayout>
