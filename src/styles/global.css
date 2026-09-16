@@ -101,6 +101,10 @@ img { display: block; max-width: 100%; }
 .prose p + p { margin-top: 22px; }
 .compact-prose p { font-size: 16px; }
 .compact-prose p + p { margin-top: 10px; }
+.plugin-links a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.plugin-links a:hover { text-decoration-color: var(--blue); }
+.plugin-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+.plugin-links span { margin-left: 8px; color: var(--blue); }
 
 .work-list { border-top: 1px solid var(--ink); }
 .work-item { display: grid; grid-template-columns: 42px 1fr; gap: 22px; padding: 34px 0; border-bottom: 1px solid var(--line); }
