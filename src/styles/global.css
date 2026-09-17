@@ -106,6 +106,14 @@ img { display: block; max-width: 100%; }
 .plugin-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
 .plugin-links span { margin-left: 8px; color: var(--blue); }
 
+.building-project { max-width: 650px; }
+.building-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.building-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 8px; }
+.building-logo { position: relative; display: block; width: min(270px, 100%); aspect-ratio: 1640 / 275; overflow: hidden; }
+.building-logo img { position: absolute; width: 132.3171%; max-width: none; height: auto; left: -16.7073%; top: -73.8182%; mix-blend-mode: multiply; }
+.building-visit { font-size: 13px; font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+.building-project p { margin: 24px 0 0; color: #44433f; font-size: 17px; line-height: 1.65; }
+
 .work-list { border-top: 1px solid var(--ink); }
 .work-item { display: grid; grid-template-columns: 42px 1fr; gap: 22px; padding: 34px 0; border-bottom: 1px solid var(--line); }
 .item-number { padding-top: 7px; color: var(--blue); font-size: 10px; font-weight: 700; }
