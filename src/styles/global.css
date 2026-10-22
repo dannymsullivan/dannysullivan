@@ -107,6 +107,7 @@ img { display: block; max-width: 100%; }
 .plugin-links span { margin-left: 8px; color: var(--blue); }
 
 .building-project { max-width: 650px; }
+.building-project + .building-project { margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--line); }
 .building-link { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
 .building-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 8px; }
 .building-logo { position: relative; display: block; width: min(270px, 100%); aspect-ratio: 2000 / 344; overflow: hidden; }
@@ -164,3 +165,6 @@ img { display: block; max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.building-wordmark { display: block; font-size: 29px; font-weight: 650; letter-spacing: -.05em; line-height: 1.2; }
+.building-wordmark > span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 400; letter-spacing: 0; }
