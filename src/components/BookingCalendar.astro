@@ -1,0 +1,27 @@
+---
+interface Props {
+  calLink: string;
+  bookingUrl: string;
+  title: string;
+  namespace: string;
+}
+const { calLink, bookingUrl, title, namespace } = Astro.props;
+---
+
+<div class="booking-calendar" data-cal-booking data-cal-link={calLink} data-cal-namespace={namespace}>
+  <div class="calendar-topline">
+    <p>Choose a date and time</p>
+    <a class="text-link" href={bookingUrl} target="_blank" rel="noopener noreferrer">Open in Cal.com <span aria-hidden="true">↗</span><span class="sr-only"> (new tab)</span></a>
+  </div>
+  <p class="calendar-status" role="status" aria-live="polite" data-cal-status>Loading available times…</p>
+  <div class="calendar-host" data-cal-host aria-label={`Calendar for ${title}`} aria-busy="true"></div>
+  <noscript>
+    <style>.calendar-host, .calendar-status { display: none; }</style>
+    <p class="calendar-noscript">To choose a time, <a href={bookingUrl}>open the booking calendar on Cal.com</a>.</p>
+  </noscript>
+  <p class="calendar-help">Times are shown in the calendar’s selected time zone. You can change it before booking.</p>
+</div>
+
+<script>
+  import '../scripts/booking';
+</script>

@@ -1,0 +1,32 @@
+---
+import { sessions } from '../config/sessions';
+---
+
+<div class="session-grid">
+  <article class="session-card discovery-card" id="discovery">
+    <div class="session-topline"><span class="eyebrow">Start with one problem</span><span class="session-number">01</span></div>
+    <h3>Discovery call</h3>
+    <p class="session-description">Bring one small, real business problem. I’ll work through it live with you so you can see what’s possible.</p>
+    <div class="session-price"><strong>Free</strong><span>20 minutes · 1:1 remote</span></div>
+    <ul class="session-includes">
+      <li>A focused look at what’s slowing you down</li>
+      <li>A live demonstration using your problem</li>
+      <li>A clear next step you can take away</li>
+    </ul>
+    <a class="button button-outline" href={sessions.discovery.page}>{sessions.discovery.cta}<span aria-hidden="true">↗</span></a>
+    <p class="booking-note">{sessions.discovery.connected ? 'Choose a time that works for you. No payment required.' : 'Email Danny to find a time. No payment required.'}</p>
+  </article>
+  <article class="session-card private-card" id="private-session">
+    <div class="session-topline"><span class="eyebrow">Build your capability</span><span class="session-number">02</span></div>
+    <h3>AI for Business Leaders</h3>
+    <p class="session-description">A private working session built around your role, your goals, and a challenge you want to solve. No technical background required.</p>
+    <div class="session-price"><strong class:list={{ 'price-on-request': !sessions.private.price }}>{sessions.private.price ?? 'Pricing on request'}</strong><span>60 minutes · 1:1 remote{sessions.private.price ? ' · USD' : ''}</span></div>
+    <ul class="session-includes">
+      <li>Hands-on guidance with your actual work</li>
+      <li>A process you practice, with me beside you</li>
+      <li>The confidence to do it again on your own</li>
+    </ul>
+    <a class="button button-light" href={sessions.private.page}>{sessions.private.cta}<span aria-hidden="true">↗</span></a>
+    <p class="booking-note">{sessions.private.connected ? 'Select your time and complete payment when you book.' : 'Email Danny for pricing and available times before booking.'}</p>
+  </article>
+</div>

@@ -1,0 +1,20 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import SessionCards from '../components/SessionCards.astro';
+const faqs = [
+  ['Who are these sessions for?', 'CEOs, founders, and business leaders who want to use AI in their own work. You might be starting from scratch, using AI occasionally, or ready to tackle a more ambitious project. We’ll start from where you are.'],
+  ['Do I need a technical background?', 'No. Bring your knowledge of your business and a willingness to try things. I’ll explain each step in plain language and give you room to practice and ask questions.'],
+  ['What should I bring?', 'One specific task, question, or idea. A report you prepare every week, a spreadsheet you need to understand, or an idea you want to explore are good starting points. Use sample or redacted materials if your work contains sensitive information.'],
+  ['What can we solve in a free 20-minute call?', 'Choose a small, contained problem: improving a draft, making sense of a sample spreadsheet, or finding a better approach to one recurring task. I’ll demonstrate an approach live. If your challenge is bigger, we’ll focus on a useful first step.'],
+  ['Do you only teach Codex?', 'Codex is my preferred tool, and I’m happy to help you learn it. The session is built around your goal, so we can also work with ChatGPT, Claude, or Gemini. You don’t have to switch tools to work with me.'],
+  ['How do remote sessions work?', 'We meet one-to-one over a video call and work together through screen sharing. You’ll get joining details when we confirm your session. Bring a computer so you can try things as we go.'],
+  ['What if I need to cancel?', 'For paid sessions, cancel at least one business day before your session to qualify for a refund. Use the cancellation or rescheduling link in your booking email. If you need help, email hello@dannysullivan.ai.'],
+];
+---
+
+<MarketingLayout title="Book an AI Session | Danny Sullivan" description="AI for Business Leaders: a private, 60-minute remote working session. Or bring one small problem to a free 20-minute discovery call with Danny Sullivan.">
+  <section class="booking-heading" aria-labelledby="booking-heading"><p class="eyebrow">Private sessions with Danny Sullivan</p><h1 id="booking-heading">Your work.<br />Our <em>starting point.</em></h1><div><p>One-to-one AI education for business leaders.<br />Bring a real challenge. Learn by working through it.</p><span>No technical background required.</span></div></section>
+  <section class="booking-options" aria-label="Choose a session"><SessionCards /></section>
+  <section class="booking-process" aria-labelledby="process-heading"><h2 id="process-heading">Simple from the start.</h2><ol><li><span>01</span><div><h3>Choose your session.</h3><p>Start with a free call or a focused hour of private guidance.</p></div></li><li><span>02</span><div><h3>Bring one real challenge.</h3><p>A task, a question, or an idea. A little context goes a long way.</p></div></li><li><span>03</span><div><h3>Learn by doing.</h3><p>We work together live, so you understand both the result and the process.</p></div></li></ol></section>
+  <section class="faq-section" aria-labelledby="faq-heading"><div><p class="eyebrow">Before we meet</p><h2 id="faq-heading">A few things<br />to <em>know.</em></h2><p>Something else on your mind?</p><a class="text-link" href="mailto:hello@dannysullivan.ai">Ask Danny <span aria-hidden="true">↗</span></a></div><div class="faq-list">{faqs.map(([question, answer]) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+</MarketingLayout>

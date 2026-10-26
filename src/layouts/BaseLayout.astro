@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'Danny Sullivan — Product Engineer',
-  description = 'Product engineer building end-to-end AI products and applied GenAI systems.',
+  title = 'Danny Sullivan — AI Education & Consulting',
+  description = 'Private AI education and consulting for business leaders. Learn with your real work, one-to-one with Danny Sullivan.',
   noindex = false,
 } = Astro.props;
 ---
@@ -21,14 +21,13 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
-    <meta name="theme-color" content="#f4f2ed" />
+    <meta name="theme-color" content="#f7f6f2" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/danny-sullivan.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script is:inline>document.documentElement.classList.add('js');</script>
     <title>{title}</title>
   </head>
   <body>

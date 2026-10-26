@@ -1,0 +1,53 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import BookingCalendar from '../../components/BookingCalendar.astro';
+import { sessions } from '../../config/sessions';
+
+export function getStaticPaths() {
+  return [
+    { params: { session: 'discovery' }, props: { kind: 'discovery' as const } },
+    { params: { session: 'private' }, props: { kind: 'private' as const } },
+  ];
+}
+
+const { kind } = Astro.props;
+const session = sessions[kind];
+const isDiscovery = kind === 'discovery';
+const price = isDiscovery ? 'Free' : sessions.private.price ?? 'Pricing on request';
+const description = isDiscovery
+  ? 'Bring one small business problem. We’ll work through it live in a free 20-minute discovery call.'
+  : 'A private, 60-minute AI working session built around your role and a real business challenge. No technical background required.';
+---
+
+<MarketingLayout title={`Book ${session.title} | Danny Sullivan`} description={description}>
+  <section class="session-booking-heading" aria-labelledby="session-title">
+    <a class="text-link" href="/book/">← All sessions</a>
+    <p class="eyebrow">One-to-one with Danny Sullivan</p>
+    <h1 id="session-title">{session.title}</h1>
+    <p class="session-booking-description">{description}</p>
+    <div class="session-booking-meta"><strong>{price}</strong><span>{session.duration} minutes</span><span>Remote video call</span>{!isDiscovery && sessions.private.price && <span>USD · one session</span>}</div>
+  </section>
+
+  {session.calLink ? (
+    <section class="scheduler-section" aria-label={`Book ${session.title}`}>
+      <BookingCalendar calLink={session.calLink} bookingUrl={session.href} title={session.title} namespace={`danny-${kind}`} />
+      <p class="payment-explanation">{isDiscovery
+        ? 'This call is free. Choose your time and tell me which small problem you’d like to solve.'
+        : 'Choose your time, share your challenge, and pay securely through Stripe to complete your booking. Cancel at least one business day beforehand to qualify for a refund. Your confirmation email includes session details and links to manage your booking.'}</p>
+    </section>
+  ) : (
+    <section class="booking-request" aria-labelledby="request-heading">
+      <h2 id="request-heading">Let’s find a time.</h2>
+      <p>{isDiscovery
+        ? 'Email me the problem you’d like to work on, your time zone, and a few times that suit you. We’ll arrange your free call together.'
+        : 'Email me a little about your role, the challenge you’d like to work on, and your time zone. I’ll reply with pricing and available times before you commit.'}</p>
+      <a class="button" href={session.href}>{session.cta} <span aria-hidden="true">↗</span></a>
+      <p class="booking-note">This opens your email app. A session is scheduled once we confirm a time.</p>
+    </section>
+  )}
+
+  <aside class="session-preparation">
+    <div><h2>Bring one thing you want to move forward.</h2><p>A recurring task, a decision, or an idea. Sample or redacted materials work well. Join from a computer so we can share screens and work together.</p></div>
+    <a class="text-link" href="mailto:hello@dannysullivan.ai">A question before booking? <span aria-hidden="true">↗</span></a>
+  </aside>
+</MarketingLayout>

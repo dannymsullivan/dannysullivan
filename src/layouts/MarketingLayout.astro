@@ -1,0 +1,33 @@
+---
+import BaseLayout from './BaseLayout.astro';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const isBooking = Astro.url.pathname.replace(/\/$/, '') === '/book';
+---
+
+<BaseLayout title={title} description={description}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="site-brand" href="/" aria-label="Danny Sullivan, home">
+        <span class="brand-mark" aria-hidden="true">DS</span>
+        <span>Danny Sullivan<small>AI education & consulting</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="nav-about" href="/#approach">The approach</a>
+        <a class="nav-about" href="/#about">About Danny</a>
+        <a class="nav-book" href="/book/" aria-current={isBooking ? 'page' : undefined}>Book a session <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="site-footer">
+      <div><a class="footer-name" href="/">Danny Sullivan</a><p>Practical AI. Personally taught.</p></div>
+      <nav aria-label="Footer navigation">
+        <a href="/book/">Sessions</a>
+        <a href="/clients/">Client billing</a>
+        <a href="mailto:hello@dannysullivan.ai">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+      <p class="copyright">© {new Date().getFullYear()} Danny Sullivan</p>
+    </footer>
+  </div>
+</BaseLayout>

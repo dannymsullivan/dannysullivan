@@ -1,218 +1,65 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import SessionCards from '../components/SessionCards.astro';
 
-const work = [
-  {
-    name: 'Seatview',
-    description:
-      'An end-to-end system that generates, classifies, and publishes AI-transformed seat-view photos at scale, so fans can trust the view before they buy.',
-    stack: 'Python, cloud GPUs, S3, CloudFront, GenAI',
-  },
-  {
-    name: 'Creative Hub',
-    description:
-      'A self-serve internal product that lets content teams source, generate, and publish section-photo coverage without an engineer in the loop.',
-    stack: 'Next.js, TypeScript, AI workflows',
-  },
-  {
-    name: 'Venue intelligence',
-    description:
-      'Agents that find photo-coverage gaps and reference candidates, plus an SVG-to-GeoJSON pipeline for interactive venue maps.',
-    stack: 'Agents, Snowflake, Mapbox GL, WebGL',
-  },
-];
-
-const experience = [
-  ['2026—Now', 'Gametime', 'Product Engineer'],
-  ['2022—2026', 'Pluralsight', 'Sr. Creative Technologist · Staff Author, GenAI · Curriculum Manager'],
-  ['2017—2019', '2U', 'Sr. Curriculum Engineer'],
-  ['2012—2017', 'UltraLinq + Creative Loafing', 'Software Engineer'],
+const examples = [
+  { number: '01', title: 'Make sense of the information.', problem: '“I have the data. I need the decision.”', description: 'Work through a spreadsheet, compare options, or turn scattered research into a brief you can act on.' },
+  { number: '02', title: 'Get time back in your week.', problem: '“There has to be a better way to do this.”', description: 'Take a recurring report, planning task, or follow-up process and develop a repeatable way to do it with AI.' },
+  { number: '03', title: 'Move an idea into action.', problem: '“I know what I want. How do I build it?”', description: 'Explore a business idea, map out a useful internal tool, or create a first prototype together.' },
 ];
 ---
 
-<BaseLayout
-  title="Danny Sullivan — Product Engineer"
-  description="Product engineer at Gametime building end-to-end AI products and applied GenAI systems."
->
-  <div class="page-shell">
-    <header class="simple-header" id="top">
-      <a class="simple-brand" href="/" aria-label="Danny Sullivan, home">
-        <span class="brand-mark">DS</span>
-        <span>Danny Sullivan</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="/clients/">Clients</a>
-        <a href="mailto:hello@dannysullivan.ai">Email</a>
-      </nav>
-    </header>
-
-    <main class="content-grid">
-      <aside class="profile">
-        <div class="profile-intro">
-          <img src="/danny-sullivan.jpg" alt="Danny Sullivan smiling" width="104" height="104" />
-          <p>I’m a Product Engineer at <strong>Gametime</strong>, building AI products for live events.</p>
-        </div>
-        <p>I turn fuzzy ideas into working software, from the interface through the models and infrastructure.</p>
-        <p>Before tech, I played professional baseball and taught special education.</p>
-        <div class="profile-links">
-          <span>Get in touch</span>
-          <a href="mailto:hello@dannysullivan.ai">hello@dannysullivan.ai</a>
-        </div>
-      </aside>
-
-      <div class="main-column">
-      <section class="simple-hero">
-        <h1>I build products<br />that <em>ship.</em></h1>
-        <p class="lead">
-          I take ambiguous, early-stage problems and turn them into production software—fast.
-          Right now I’m building the generative-AI systems that help fans see and trust their
-          seat view before they buy.
-        </p>
-        <div class="hero-links">
-          <a class="primary-link" href="mailto:hello@dannysullivan.ai">Work with me <span>↗</span></a>
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="building-heading">
-        <h2 id="building-heading">Currently building</h2>
-        <div class="building-project">
-          <a class="building-link" href="https://raleighaiguy.com/">
-            <span class="building-wordmark">Raleigh AI Guy<span>Practical AI for local businesses.</span></span>
-            <span class="building-visit">Visit Raleigh AI Guy <span aria-hidden="true">↗</span></span>
-          </a>
-          <p>
-            My local AI consulting and building practice. I help Raleigh business owners
-            find useful opportunities, build systems around their work, and get their
-            teams comfortable using them. Strategy, implementation, and training,
-            with a clear way to measure what changed.
-          </p>
-        </div>
-        <div class="building-project">
-          <a class="building-link" href="https://www.raleighleadrecovery.com/">
-            <span class="building-wordmark">Raleigh Lead Recovery<span>Turn missed calls into real opportunities.</span></span>
-            <span class="building-visit">Visit Raleigh Lead Recovery <span aria-hidden="true">↗</span></span>
-          </a>
-          <p>
-            Missed-call coverage for Raleigh service businesses. When a team can’t
-            pick up, Chloe answers, captures what the caller needs, and sends back
-            a clear next step. An immediate text-back gives callers another way
-            to reconnect.
-          </p>
-        </div>
-        <div class="building-project">
-          <a class="building-link" href="https://bumpsetbook.com/">
-            <span class="building-wordmark">BumpSetBook<span>A first step into volleyball.</span></span>
-            <span class="building-visit">Visit BumpSetBook <span aria-hidden="true">↗</span></span>
-          </a>
-          <p>
-            A simpler way for families to discover nearby volleyball programs,
-            compare options, and connect with clubs. I’m building it as a volleyball
-            parent, with tools for clubs to manage lessons, camps, and their shared
-            calendar.
-          </p>
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="about-heading">
-        <h2 id="about-heading">What I do</h2>
-        <div class="prose">
-          <p>
-            I own products end to end: find the useful problem, shape the experience, build the
-            frontend and backend, wire up the models and infrastructure, ship it, and measure what
-            happens next.
-          </p>
-          <p>
-            I work agent-first. Claude Code, Codex, Cursor, and Gemini are part of my day-to-day
-            development loop—not demos off to the side. The point is more leverage, faster learning,
-            and better software in people’s hands.
-          </p>
-        </div>
-      </section>
-
-      <section class="text-section" id="work" aria-labelledby="work-heading">
-        <h2 id="work-heading">A few things I’ve built</h2>
-        <div class="work-list">
-          {work.map((item, index) => (
-            <article class="work-item">
-              <span class="item-number">0{index + 1}</span>
-              <div>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <p class="stack">{item.stack}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="stack-heading">
-        <h2 id="stack-heading">Tools I reach for</h2>
-        <div class="prose compact-prose">
-          <p><strong>Build:</strong> TypeScript, Node.js, React, Next.js, Astro, Python</p>
-          <p><strong>AI:</strong> Claude Code, Codex, Cursor, Gemini, Grokbot</p>
-          <p><strong>Ship:</strong> AWS, Vercel, Snowflake, Supabase, Statsig, Temporal, PostHog</p>
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="plugins-heading">
-        <h2 id="plugins-heading">Plugins I always use</h2>
-        <div class="prose compact-prose plugin-links">
-          <p><a href="https://github.com/obra/superpowers">Superpowers <span aria-hidden="true">↗</span></a></p>
-          <p><a href="https://github.com/garrytan/gstack">gstack <span aria-hidden="true">↗</span></a></p>
-          <p><a href="https://www.aihero.dev/skills-grill-me">grill-me <span aria-hidden="true">↗</span></a></p>
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="experience-heading">
-        <h2 id="experience-heading">Before Gametime</h2>
-        <div class="prose">
-          <p>
-            At Pluralsight, I was a senior creative technologist, Staff Author for Generative AI,
-            and curriculum manager. I built internal AI products, created hands-on learning
-            experiences, and pitched new products to leadership, the C-suite, and the board.
-          </p>
-          <p>
-            Before that, I built curriculum at 2U and software for healthcare and media companies.
-            Before tech entirely, I played professional baseball and taught special education.
-          </p>
-        </div>
-        <div class="mini-timeline">
-          {experience.map((item) => (
-            <div><span>{item[0]}</span><strong>{item[1]}</strong><p>{item[2]}</p></div>
-          ))}
-        </div>
-      </section>
-
-      <section class="text-section" aria-labelledby="education-heading">
-        <h2 id="education-heading">Education</h2>
-        <div class="education-list">
-          <div>
-            <strong>MA in Education and Human Development</strong>
-            <p>George Washington University</p>
-          </div>
-          <div>
-            <strong>BA in Psychology</strong>
-            <p>George Washington University</p>
-          </div>
-          <div>
-            <strong>Full Stack Development</strong>
-            <p>Flatiron School</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="closing">
-        <h2>Have a hard problem<br />that needs to become <em>real?</em></h2>
-        <p>Tell me about it. I’ll tell you honestly where I can help.</p>
-        <a class="primary-link" href="mailto:hello@dannysullivan.ai">hello@dannysullivan.ai <span>↗</span></a>
-      </section>
+<MarketingLayout title="AI for Business Leaders | Danny Sullivan" description="Private AI education and consulting for CEOs, founders, and business leaders. Learn with your real work in a 60-minute remote session, or start with a free 20-minute discovery call.">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="small-dot" aria-hidden="true"></span> Private AI education & consulting</p>
+      <h1 id="hero-heading">Make AI part of<br />how you <em>lead.</em></h1>
+      <p class="hero-description">You know your business. Let’s make AI work for it.</p>
+      <p class="hero-detail">Private, hands-on sessions for CEOs, founders, and ambitious business leaders. Learn with your real work, guided by an educator who builds AI products.</p>
+      <div class="hero-actions">
+        <a class="button" href="/book/#discovery">Start with a free discovery call <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="/book/#private-session">Explore private sessions <span aria-hidden="true">→</span></a>
       </div>
-    </main>
+      <p class="hero-footnote">One-to-one. Remote. No technical background required.</p>
+    </div>
+    <aside class="session-preview" aria-label="What a private session looks like">
+      <div class="preview-top"><span>A working session with Danny</span><span>1:1</span></div>
+      <p class="preview-heading">Your work.<br />Your next <em>breakthrough.</em></p>
+      <div class="preview-step"><span>01</span><div><h2>Bring a real challenge.</h2><p>The report, the process, the idea that’s on your mind.</p></div></div>
+      <div class="preview-step"><span>02</span><div><h2>Work through it together.</h2><p>Share your screen. Try the tools. Ask every question.</p></div></div>
+      <div class="preview-step"><span>03</span><div><h2>Know how to do it again.</h2><p>Understand the process, and where your judgment matters.</p></div></div>
+      <div class="preview-person"><img src="/danny-sullivan.jpg" alt="" width="44" height="44" /><div><strong>Danny Sullivan</strong><span>Educator. Product engineer. Your guide.</span></div></div>
+    </aside>
+  </section>
 
-    <footer class="simple-footer">
-      <p>© {new Date().getFullYear()} Danny Sullivan</p>
-      <a href="#top" aria-label="Back to top">Top ↑</a>
-    </footer>
+  <div class="experience-strip" aria-label="Danny’s background">
+    <p>Grounded in building.<br /><strong>Experienced in teaching.</strong></p>
+    <div><strong>Gametime</strong><span>Product Engineer</span></div>
+    <div><strong>Pluralsight</strong><span>Former Staff Author, Generative AI</span></div>
+    <div><strong>George Washington University</strong><span>MA, Education & Human Development</span></div>
   </div>
-</BaseLayout>
+
+  <section class="section" id="approach" aria-labelledby="approach-heading">
+    <div class="section-intro"><p class="eyebrow">The approach</p><h2 id="approach-heading">Start with the work<br />in front of <em>you.</em></h2><p>AI becomes useful when you can apply it to something that matters. Every session starts with your challenge and moves at your pace.</p></div>
+    <div class="example-grid">
+      {examples.map((example) => <article class="example"><span class="item-number">{example.number}</span><h3>{example.title}</h3><p class="example-quote">{example.problem}</p><p>{example.description}</p></article>)}
+    </div>
+  </section>
+
+  <section class="tool-position" aria-labelledby="tools-heading">
+    <div><p class="eyebrow">A point of view, an open mind</p><h2 id="tools-heading">Codex is my go-to.<br /><em>Your goal sets the direction.</em></h2></div>
+    <div><p>I prefer Codex and use it in my own work. I’ll show you how I use it, explain my choices, and help you recognize when another tool fits the job.</p><p>Already using ChatGPT, Claude, or Gemini? We can start there. You’re here to develop skills and judgment you can take from one tool to the next.</p></div>
+  </section>
+
+  <section class="section" aria-labelledby="sessions-heading">
+    <div class="section-intro session-intro"><div><p class="eyebrow">Work with me</p><h2 id="sessions-heading">A small first step.<br />A more capable <em>you.</em></h2></div><p>See what’s possible in a discovery call, or give a bigger challenge your full attention in a private session.</p></div>
+    <SessionCards />
+  </section>
+
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="about-photo"><img src="/danny-sullivan.jpg" alt="Danny Sullivan smiling" width="615" height="615" loading="lazy" /><span>Danny Sullivan / Educator & builder</span></div>
+    <div class="about-copy"><p class="eyebrow">Your guide</p><h2 id="about-heading">A teacher’s patience.<br />A builder’s <em>perspective.</em></h2><p>I’m Danny. I build AI products at Gametime. Before that, I was a Staff Author for Generative AI, senior creative technologist, and curriculum manager at Pluralsight.</p><p>Teaching has always been part of my work, from special education to technical curriculum. I have a master’s in Education and Human Development from George Washington University. Before tech, I also played professional baseball.</p><p>I bring that experience to our sessions: clear explanations, room to ask questions, and practice that helps you become more capable.</p><a class="text-link" href="/book/">Let’s work on something that matters to you <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-heading"><p class="eyebrow">Let’s make it useful</p><h2 id="closing-heading">Bring one problem.<br />Let’s solve it <em>live.</em></h2><p>A free 20-minute discovery call. Pick one small challenge, and we’ll get to work.</p><a class="button" href="/book/#discovery">Explore the free discovery call <span aria-hidden="true">↗</span></a></section>
+</MarketingLayout>

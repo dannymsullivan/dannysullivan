@@ -6,6 +6,9 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  PUBLIC_DISCOVERY_BOOKING_URL = "https://cal.com/danny-sullivan/discovery"
+  PUBLIC_SESSION_BOOKING_URL = "https://cal.com/danny-sullivan/ai-for-business-leaders"
+  PUBLIC_SESSION_PRICE_USD = "249"
 
 [[headers]]
   for = "/*"
