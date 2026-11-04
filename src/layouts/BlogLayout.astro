@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/resume.css';
+import '../styles/blog.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <div class="resume-page blog-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="resume-top"><a href="/" class="resume-wordmark">DS<span>Danny Sullivan</span></a><nav aria-label="Primary navigation"><a href="/">Resume</a><a href="/blog/" aria-current={Astro.url.pathname === '/blog/' ? 'page' : undefined}>Blog</a><a href="mailto:hello@dannysullivan.ai">Get in touch ↗</a></nav></header>
+    <main id="main-content" class="blog-main"><slot /></main>
+    <footer class="resume-footer"><span>© {new Date().getFullYear()} Danny Sullivan</span><div><a href="/">Technical resume</a><a href="/work/seatview/">Seatview case study ↗</a><a href="/blog/rss.xml">RSS feed</a></div></footer>
+  </div>
+</BaseLayout>
