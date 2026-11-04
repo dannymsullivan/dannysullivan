@@ -1,0 +1,18 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { posts, formatPostDate } from '../../data/blog';
+export function getStaticPaths() {
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+type Props = { post: (typeof posts)[number] };
+const { post } = Astro.props;
+const Content = post.Content;
+---
+<BlogLayout title={`${post.title} | Danny Sullivan`} description={post.description}>
+  <article class="blog-article">
+    <header class="article-heading"><a class="back-to-blog" href="/blog/">← All articles</a><div class="post-meta"><span>{post.category}</span><time datetime={post.date}>{formatPostDate(post.date)}</time></div><h1>{post.title}</h1><p class="article-deck">{post.description}</p><p class="article-author">By Danny Sullivan</p></header>
+    {post.image && <figure class="article-figure"><a href={post.image} aria-label="Open the full-resolution experiment screenshot"><img src={post.image} alt={post.imageAlt ?? post.title} width="1787" height="1058" /></a>{post.imageCaption && <figcaption>{post.imageCaption}</figcaption>}</figure>}
+    <div class="article-prose"><Content /></div>
+    <footer class="article-end"><p>Written from my current work and implementation experience. The system continues to evolve.</p><div><a href="/blog/">← More field notes</a><a href="mailto:hello@dannysullivan.ai">Discuss this work ↗</a></div></footer>
+  </article>
+</BlogLayout>

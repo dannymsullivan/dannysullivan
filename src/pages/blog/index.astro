@@ -1,0 +1,11 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { posts, formatPostDate } from '../../data/blog';
+---
+<BlogLayout title="Blog | Danny Sullivan" description="Notes on building AI systems, making engineering decisions, and helping people apply AI to real work.">
+  <header class="blog-heading"><p class="resume-label">Field notes / Applied AI</p><h1>Building. Testing.<br />Writing it down.</h1><p>Notes from the work: AI systems, engineering tradeoffs, and what it takes to help people use them.</p><a class="blog-feed" href="/blog/rss.xml">Follow via RSS ↗</a></header>
+  <section class="post-list" aria-label="Latest articles">
+    {posts.length ? posts.map((post) => <article><div class="post-meta"><span>{post.category}</span><time datetime={post.date}>{formatPostDate(post.date)}</time></div><div>{post.image && <a class="post-thumbnail" href={post.href} aria-label={`Read ${post.title}`}><img src={post.image} alt={post.imageAlt ?? post.title} width="1787" height="1058" loading="lazy" /></a>}<h2><a href={post.href}>{post.title}<span aria-hidden="true">↗</span></a></h2><p>{post.description}</p><a class="post-read" href={post.href}>Read the article →</a></div></article>) : <p class="blog-empty">New notes are on the way. Check back soon.</p>}
+  </section>
+  <aside class="blog-context"><p class="resume-label">The work behind the writing</p><h2>See the system in context.</h2><p>Seatview is my current work at Gametime: coverage intelligence, image workflows, independent review, and operator control.</p><a href="/work/seatview/">Explore the Seatview case study ↗</a></aside>
+</BlogLayout>
