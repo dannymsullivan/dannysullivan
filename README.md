@@ -77,3 +77,4 @@ The existing `netlify.toml` configures `npm run build`, the `dist` publish direc
 - `public/danny-sullivan.jpg` — existing portrait
 - `tests/sessions.test.mjs` — booking configuration and checkout guard tests
 - `tests/booking-runtime.test.mjs` — calendar loading, failure, timeout, and recovery tests
+- `tests/workflow-runtime.test.mjs` — case-study default/deep-linked stages, click selection, and hash navigation tests
