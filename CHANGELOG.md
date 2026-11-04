@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0.0] - 2026-11-04
+
+### Added
+
+- Explore a detailed Seatview case study with an interactive workflow and expandable engineering practices.
+- Review AI leadership qualifications, career history, technical expertise, and education in a scannable technical resume.
+
+### Changed
+
+- Focus the homepage on AI leadership opportunities, executive partnership, and hands-on systems engineering.
+- Keep private sessions and client billing accessible through the existing routes.
+
 ## [0.1.0.2] - 2026-10-22
 
 ### Changed
