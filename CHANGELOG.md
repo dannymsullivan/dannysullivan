@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0.0] - 2026-11-04
+
+### Added
+
+- Read applied AI field notes in a new blog with article pages and an RSS feed.
+- Explore stadium reconstruction experiments with World Labs Atlas, including a Hard Rock Stadium screenshot and technical evaluation plan.
+
+### Changed
+
+- Focus resume and case-study language on the work; remove CEO-reporting references.
+
 ## [0.2.0.0] - 2026-11-04
 
 ### Added
