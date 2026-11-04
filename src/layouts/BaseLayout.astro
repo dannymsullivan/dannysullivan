@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'Danny Sullivan — AI Education & Consulting',
-  description = 'Private AI education and consulting for business leaders. Learn with your real work, one-to-one with Danny Sullivan.',
+  title = 'Danny Sullivan — Applied AI Leadership',
+  description = 'AI leadership across business strategy, hands-on engineering, experimentation, and teaching.',
   noindex = false,
 } = Astro.props;
 ---
@@ -25,7 +25,8 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/danny-sullivan.jpg" />
+    <meta property="og:image" content="https://dannysullivan.ai/danny-sullivan.jpg" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://dannysullivan.ai')} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>

@@ -1,6 +1,6 @@
-# Danny Sullivan — AI Education & Consulting
+# Danny Sullivan — Applied AI Leadership
 
-An Astro site for private AI education and consulting for business leaders.
+An Astro portfolio for AI leadership opportunities, connecting executive strategy, applied engineering, experimentation, and teaching. The homepage is a technical resume: evidence-backed qualifications, a compact Seatview system breakdown, expandable engineering decisions, career history, skills, and education. It highlights direct CEO reporting and company-wide AI guidance. `/work/seatview/` is the detailed business and technical case study. Existing booking and client-billing routes remain available.
 
 ## Run locally
 
@@ -20,7 +20,7 @@ The build runs Astro's type checks and generates the static site in `dist/`.
 
 ## Sessions and booking
 
-The homepage and `/book/` share two offers:
+`/book/` offers two sessions:
 
 - **Discovery call:** free, 20 minutes, one-to-one and remote, focused on one small real problem.
 - **AI for Business Leaders:** 60 minutes, one-to-one and remote. No technical background required.
@@ -61,7 +61,11 @@ The existing `netlify.toml` configures `npm run build`, the `dist` publish direc
 
 ## Main files
 
-- `src/pages/index.astro` — positioning, approach, background, and session offers
+- `src/pages/index.astro` — technical resume, qualifications, Seatview summary, experience, skills, education
+- `src/layouts/ResumeLayout.astro` — resume navigation, contact links, and footer
+- `src/styles/resume.css` — responsive technical-resume layout
+- `src/pages/work/seatview.astro` — business problem, interactive workflow, architecture, safeguards, and validation scope
+- `src/data/seatview.ts` — workflow stages and engineering-practice explanations
 - `src/pages/book.astro` — session selection, process, and FAQs
 - `src/pages/book/[session].astro` — individual session booking pages
 - `src/components/BookingCalendar.astro` — inline calendar and direct booking fallback
@@ -73,3 +77,4 @@ The existing `netlify.toml` configures `npm run build`, the `dist` publish direc
 - `public/danny-sullivan.jpg` — existing portrait
 - `tests/sessions.test.mjs` — booking configuration and checkout guard tests
 - `tests/booking-runtime.test.mjs` — calendar loading, failure, timeout, and recovery tests
+- `tests/workflow-runtime.test.mjs` — case-study default/deep-linked stages, click selection, and hash navigation tests
