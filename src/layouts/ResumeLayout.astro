@@ -1,0 +1,14 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/resume.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <div class="resume-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="resume-top"><a href="/" class="resume-wordmark">DS<span>Danny Sullivan</span></a><div><span class="resume-top-label">Applied AI / Technical leadership</span><a href="mailto:hello@dannysullivan.ai">Get in touch ↗</a></div></header>
+    <div class="resume-shell"><aside class="resume-rail"><p class="rail-title">Technical resume</p><nav aria-label="Resume sections"><a href="#profile"><span>01</span>Profile</a><a href="#seatview"><span>02</span>Seatview</a><a href="#experience"><span>03</span>Experience</a><a href="#expertise"><span>04</span>Expertise</a><a href="#education"><span>05</span>Education</a></nav><div class="rail-note">Business strategy.<br />Working software.<br />People who can use it.</div><a class="rail-email" href="mailto:hello@dannysullivan.ai">Email Danny ↗</a></aside><main id="main-content"><slot /></main></div>
+    <footer class="resume-footer"><span>© {new Date().getFullYear()} Danny Sullivan</span><div><a href="/work/seatview/">Technical case study ↗</a><a href="/book/">AI sessions</a><a href="/clients/">Client billing</a></div></footer>
+  </div>
+</BaseLayout>
