@@ -146,7 +146,3 @@ This experiment fits that role: identify a capability that could change how we c
 **The opportunity is a reusable spatial foundation for stadium content.** My job at this stage is to find out how much of that foundation is faithful, what it costs to produce, where it breaks, and what a team would need to operate it responsibly.
 
 That is the part of frontier AI work I find most compelling: moving from an impressive model demonstration to an engineering question with a testable answer.
-
----
-
-*Experiment notes, November 4, 2026. This post describes ongoing R&D, an observed Chisel session, and an evaluation approach. Model and API details link to World Labs’ documentation; account access and task behavior can change.*

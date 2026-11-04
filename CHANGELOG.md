@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0.1] - 2026-11-04
+
+### Changed
+
+- End the Atlas stadium post on its closing thought; remove the repeated experiment-notes footer.
+
 ## [0.3.0.0] - 2026-11-04
 
 ### Added
