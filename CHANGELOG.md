@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1.0] - 2026-11-09
+
+### Added
+
+- Read how Seatview combines creative AI, agents, spatial experiments, and production engineering.
+- Follow a conceptual image workflow without exposing production data or third-party venue imagery.
+
 ## [0.3.0.1] - 2026-11-04
 
 ### Changed
