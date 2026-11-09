@@ -14,6 +14,8 @@ The lighting might be convincing. The crowd might feel alive. The stage might lo
 
 That tension is at the center of a lot of my work at Gametime.
 
+There is also a coverage problem behind it. A marketplace can have tickets available for an event while still lacking useful imagery for the sections people are considering. Every new event and layout can create more work. Filling those gaps one photo at a time does not scale with a changing catalog.
+
 I’m building Seatview, experimenting with generative media and spatial AI, integrating OpenAI’s managed agent infrastructure and Codex App Server, and creating tools that let other people use those capabilities in their work.
 
 These projects keep bringing me back to the same question: **how do you turn an emerging AI capability into something useful enough for another person to rely on?**
@@ -39,6 +41,29 @@ A lot of the creative work is in expressing those relationships clearly enough t
 I spend time looking at the actual images: whether people feel photographic, whether a stage fits the room, whether a transformation preserves the sense of height and distance, and whether an obstruction that matters to the viewer is still there.
 
 The prompt is one part of that work. Source selection, masking, reference design, and evaluation matter just as much.
+
+## From new events to photos ready for review
+
+The larger opportunity is to make photo coverage a continuous workflow.
+
+The automation I’m building starts with the event catalog. Gametime’s existing sync pipeline brings in events and connects them to their seating configurations. Seatview checks that information against the photo library to identify where useful coverage is missing.
+
+That gives the system a recurring operating cycle:
+
+1. **Notice relevant events and inventory changes** through the synced catalog.
+2. **Find the actual coverage gaps** in the matching venue and seating configuration.
+3. **Prioritize the work** using business context, including realized transaction GMV.
+4. **Find and assess suitable source imagery**, preserving the relationship between the source camera and event layout.
+5. **Generate missing views and check the results**, keeping passing candidates and surfacing failures for attention.
+6. **Bring prepared photos to an operator** for review and an explicit publication decision.
+
+When Autopilot is enabled, eligible preparation and generation can run in the background. The browser does not need to stay open. If several event dates use the same seating configuration, they can share a photo set instead of buying the same work repeatedly.
+
+This changes the shape of the problem. Someone no longer has to discover every gap, assemble every input, and babysit every generation request. The system can bring them prepared work and specific exceptions that need judgment.
+
+Publication remains an explicit decision. I’m continuing to validate quality and operating cost as I expand the automation.
+
+The goal is a coverage engine that keeps pace with the marketplace: new events become visible, missing imagery becomes actionable, and useful photos move toward the buying experience through a repeatable process.
 
 ## Making a look work across an entire venue
 
@@ -161,15 +186,21 @@ A generated asset becomes useful when people can find it, inspect it, make a dec
 
 Teaching informs this part of my work. At Pluralsight, I built AI prototypes, explored video models, and created hands-on learning experiences. That experience carries directly into product design. If I can’t explain what a control does or what a result means, the interface probably needs more work.
 
-## Deciding which problems deserve the next experiment
+## Connecting the coverage gap to GMV
 
 There are always more images to generate and more models to try.
 
-I’ve built a Snowflake-backed coverage agent to connect photo gaps with upcoming events and realized transaction GMV. That helps focus attention on relevant inventory rather than whichever venue happens to be interesting that day.
+I’ve built a Snowflake-backed coverage agent to connect photo gaps with upcoming events and realized transaction GMV. GMV is the gross value of ticket transactions, distinct from company revenue. It gives the queue a business signal for deciding where to focus attention.
+
+A missing photo for inventory associated with substantial transaction activity deserves a different priority from a gap with little activity. Seatview connects that context to the exact configuration and missing sections so the next generation job has a reason to exist.
+
+The chain is straightforward: understand where transaction activity is concentrated, identify the relevant coverage gaps, prepare useful imagery, and make it easier for a buyer to understand what they are considering.
+
+That is why the gap matters. Missing imagery leaves an important buying question unanswered: what will this experience look like from here? The opportunity is to address that uncertainty across more of the catalog, with a workflow whose cost and quality can be inspected.
 
 It also forces clearer measurement.
 
-Coverage, visual quality, operating cost, and commercial impact are different outcomes. Improving one doesn’t automatically prove the others. An event’s GMV helps establish priority; it doesn’t establish how much revenue an image caused.
+Coverage, visual quality, operating cost, and commercial impact are different outcomes. Improving one doesn’t automatically prove the others. An event’s GMV helps establish priority; conversion or revenue uplift still needs its own measurement.
 
 I want the experiments to answer specific questions: can we create a useful view? How often does it pass review? What does an accepted image cost? How much operator effort does it require?
 
