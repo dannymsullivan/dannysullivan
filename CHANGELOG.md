@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1.2] - 2026-11-11
+
+### Changed
+
+- Find the resume download in the top navigation, with room for links to wrap on small screens.
+
 ## [0.3.1.1] - 2026-11-11
 
 ### Added

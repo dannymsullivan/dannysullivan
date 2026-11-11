@@ -1,6 +1,6 @@
 # Personal website
 
-Visitors can download the applied AI engineering resume from the homepage or portfolio footer. The PDF is served at `/Danny-Sullivan-Applied-AI-Engineer.pdf`. To update it, replace `public/Danny-Sullivan-Applied-AI-Engineer.pdf` while keeping the filename, then rebuild and deploy.
+Visitors can download the applied AI engineering resume from the top navigation, homepage, or portfolio footer. The PDF is served at `/Danny-Sullivan-Applied-AI-Engineer.pdf`. To update it, replace `public/Danny-Sullivan-Applied-AI-Engineer.pdf` while keeping the filename, then rebuild and deploy.
 
 ## Blog
 
