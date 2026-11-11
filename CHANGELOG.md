@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1.1] - 2026-11-11
+
+### Added
+
+- Download Danny’s applied AI engineering resume from the homepage or portfolio footer.
+
 ## [0.3.1.0] - 2026-11-09
 
 ### Added
